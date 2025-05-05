@@ -2,440 +2,96 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <title>অ্যাড দেখে টাকা ইনকাম</title>
+  <title>এড দেখে টাকা ইনকাম</title>
   <style>
     body {
-      font-family: Arial;
+      font-family: sans-serif;
       background: #f4f4f4;
       text-align: center;
       padding: 20px;
     }
-    .container {
-      background: #fff;
-      border-radius: 15px;
-      max-width: 400px;
-      margin: auto;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-    h2 {
-      color: green;
-    }
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 8px;
-      background: #28a745;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #balance-box {
-      margin: 20px 0;
-      font-size: 18px;
-      color: #333;
-    }
-    input, select {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>অ্যাড দেখে টাকা ইনকাম</h2>
-
-    <div id="balance-box">আপনার ব্যালেন্স: <span id="balance">৳0</span></div>
-
-    <button class="btn" onclick="viewAd()">ভিউ অ্যাডস</button>
-    <button class="btn" onclick="autoAd()">অটোমেটিক্যালি অ্যাড</button>
-    <button class="btn" onclick="showWithdraw()">উইথড্র</button>
-    <button class="btn" onclick="showProfile()">প্রোফাইল</button>
-
-    <div id="withdraw-section" style="display:none;">
-      <input type="text" id="number" placeholder="বিকাশ/নগদ নাম্বার দিন" />
-      <select id="method">
-        <option value="bKash">bKash</option>
-        <option value="Nagad">Nagad</option>
-      </select>
-      <input type="number" id="amount" placeholder="উইথড্র এমাউন্ট (৳)" />
-      <button class="btn" onclick="withdrawRequest()">রিকোয়েস্ট পাঠান</button>
-    </div>
-
-    <p id="message" style="color:green;"></p>
-  </div>
-
-  <script>
-    let balance = localStorage.getItem("balance") ? parseInt(localStorage.getItem("balance")) : 0;
-    document.getElementById("balance").innerText = "৳" + balance;
-
-    function viewAd() {
-      window.open("https://www.profitableratecpm.com/v6h7q998?key=9bf8c8c22777126bb9205f29b3e4e4d7", "_blank");
-      balance += 1;
-      localStorage.setItem("balance", balance);
-      document.getElementById("balance").innerText = "৳" + balance;
-    }
-
-    function autoAd() {
-      let confirmAuto = confirm("Auto Ad শুরু হবে। চালু রাখুন কিছুক্ষণ...");
-      if (confirmAuto) {
-        let count = 0;
-        let interval = setInterval(() =><!DOCTYPE html>
-<html lang="bn">
-<head>
-  <meta charset="UTF-8">
-  <title>অ্যাড দেখে টাকা ইনকাম</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f4f4f4;
-      text-align: center;
+    .card {
+      background: white;
+      border-radius: 12px;
       padding: 20px;
-    }
-    .container {
-      background: #fff;
-      border-radius: 15px;
       max-width: 400px;
       margin: auto;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: green;
-    }
-    .btn {
+    button {
       display: block;
       width: 100%;
-      padding: 12px;
       margin: 10px 0;
+      padding: 12px;
+      font-size: 16px;
       border: none;
       border-radius: 8px;
-      background: #28a745;
+      background-color: #007bff;
       color: white;
-      font-size: 16px;
       cursor: pointer;
     }
-    #balance-box {
-      margin: 20px 0;
-      font-size: 18px;
-      color: #333;
+    button:hover {
+      background-color: #0056b3;
     }
-    input, select {
-      width: 90%;
-      padding: 10px;
+    .text {
       margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>অ্যাড দেখে টাকা ইনকাম</h2>
-
-    <div id="balance-box">আপনার ব্যালেন্স: <span id="balance">৳0</span></div>
-
-    <button class="btn" onclick="viewAd()">ভিউ অ্যাডস</button>
-    <button class="btn" onclick="autoAd()">অটোমেটিক্যালি অ্যাড</button>
-    <button class="btn" onclick="showWithdraw()">উইথড্র</button>
-    <button class="btn" onclick="showProfile()">প্রোফাইল</button>
-
-    <div id="withdraw-section" style="display:none;">
-      <input type="text" id="number" placeholder="বিকাশ/নগদ নাম্বার দিন" />
-      <select id="method">
-        <option value="bKash">bKash</option>
-        <option value="Nagad">Nagad</option>
-      </select>
-      <input type="number" id="amount" placeholder="উইথড্র এমাউন্ট (৳)" />
-      <button class="btn" onclick="withdrawRequest()">রিকোয়েস্ট পাঠান</button>
-    </div>
-
-    <p id="message" style="color:green;"></p>
+  <div class="card">
+    <h2>এড দেখে টাকা ইনকাম</h2>
+    <div class="text">আপনার ব্যালেন্স: <span id="balance">24</span> টাকা</div>
+    <button onclick="viewAds()">View Ads</button>
+    <button onclick="autoAds()">Automatically Ads</button>
+    <button onclick="withdraw()">Withdraw</button>
+    <button onclick="showProfile()">Profile</button>
+    <button onclick="referFriend()">Refer</button>
   </div>
 
   <script>
-    let balance = localStorage.getItem("balance") ? parseInt(localStorage.getItem("balance")) : 0;
-    document.getElementById("balance").innerText = "৳" + balance;
+    const botToken = "7452246547:AAFb6Xp3G1fpnoPkP-CdmB7CslMcjQLvuik";
+    const chatId = "6593402184";
 
-    function viewAd() {
+    function viewAds() {
       window.open("https://www.profitableratecpm.com/v6h7q998?key=9bf8c8c22777126bb9205f29b3e4e4d7", "_blank");
-      balance += 1;
-      localStorage.setItem("balance", balance);
-      document.getElementById("balance").innerText = "৳" + balance;
     }
 
-    function autoAd() {
-      let confirmAuto = confirm("Auto Ad শুরু হবে। চালু রাখুন কিছুক্ষণ...");
-      if (confirmAuto) {
-        let count = 0;
-        let interval = setInterval(() =><!DOCTYPE html>
-<html lang="bn">
-<head>
-  <meta charset="UTF-8">
-  <title>অ্যাড দেখে টাকা ইনকাম</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f4f4f4;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      background: #fff;
-      border-radius: 15px;
-      max-width: 400px;
-      margin: auto;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-    h2 {
-      color: green;
-    }
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 8px;
-      background: #28a745;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #balance-box {
-      margin: 20px 0;
-      font-size: 18px;
-      color: #333;
-    }
-    input, select {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>অ্যাড দেখে টাকা ইনকাম</h2>
-
-    <div id="balance-box">আপনার ব্যালেন্স: <span id="balance">৳0</span></div>
-
-    <button class="btn" onclick="viewAd()">ভিউ অ্যাডস</button>
-    <button class="btn" onclick="autoAd()">অটোমেটিক্যালি অ্যাড</button>
-    <button class="btn" onclick="showWithdraw()">উইথড্র</button>
-    <button class="btn" onclick="showProfile()">প্রোফাইল</button>
-
-    <div id="withdraw-section" style="display:none;">
-      <input type="text" id="number" placeholder="বিকাশ/নগদ নাম্বার দিন" />
-      <select id="method">
-        <option value="bKash">bKash</option>
-        <option value="Nagad">Nagad</option>
-      </select>
-      <input type="number" id="amount" placeholder="উইথড্র এমাউন্ট (৳)" />
-      <button class="btn" onclick="withdrawRequest()">রিকোয়েস্ট পাঠান</button>
-    </div>
-
-    <p id="message" style="color:green;"></p>
-  </div>
-
-  <script>
-    let balance = localStorage.getItem("balance") ? parseInt(localStorage.getItem("balance")) : 0;
-    document.getElementById("balance").innerText = "৳" + balance;
-
-    function viewAd() {
+    function autoAds() {
       window.open("https://www.profitableratecpm.com/v6h7q998?key=9bf8c8c22777126bb9205f29b3e4e4d7", "_blank");
-      balance += 1;
-      localStorage.setItem("balance", balance);
-      document.getElementById("balance").innerText = "৳" + balance;
     }
 
-    function autoAd() {
-      let confirmAuto = confirm("Auto Ad শুরু হবে। চালু রাখুন কিছুক্ষণ...");
-      if (confirmAuto) {
-        let count = 0;
-        let interval = setInterval(() =><!DOCTYPE html>
-<html lang="bn">
-<head>
-  <meta charset="UTF-8">
-  <title>অ্যাড দেখে টাকা ইনকাম</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f4f4f4;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      background: #fff;
-      border-radius: 15px;
-      max-width: 400px;
-      margin: auto;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-    h2 {
-      color: green;
-    }
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 8px;
-      background: #28a745;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #balance-box {
-      margin: 20px 0;
-      font-size: 18px;
-      color: #333;
-    }
-    input, select {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>অ্যাড দেখে টাকা ইনকাম</h2>
+    function withdraw() {
+      const balance = document.getElementById("balance").innerText;
+      const message = `🔔 উইথড্র রিকুয়েস্ট!\\n\\nব্যালেন্স: ${balance} টাকা\\nইউজার চাইছে টাকা উইথড্র করতে।`;
 
-    <div id="balance-box">আপনার ব্যালেন্স: <span id="balance">৳0</span></div>
-
-    <button class="btn" onclick="viewAd()">ভিউ অ্যাডস</button>
-    <button class="btn" onclick="autoAd()">অটোমেটিক্যালি অ্যাড</button>
-    <button class="btn" onclick="showWithdraw()">উইথড্র</button>
-    <button class="btn" onclick="showProfile()">প্রোফাইল</button>
-
-    <div id="withdraw-section" style="display:none;">
-      <input type="text" id="number" placeholder="বিকাশ/নগদ নাম্বার দিন" />
-      <select id="method">
-        <option value="bKash">bKash</option>
-        <option value="Nagad">Nagad</option>
-      </select>
-      <input type="number" id="amount" placeholder="উইথড্র এমাউন্ট (৳)" />
-      <button class="btn" onclick="withdrawRequest()">রিকোয়েস্ট পাঠান</button>
-    </div>
-
-    <p id="message" style="color:green;"></p>
-  </div>
-
-  <script>
-    let balance = localStorage.getItem("balance") ? parseInt(localStorage.getItem("balance")) : 0;
-    document.getElementById("balance").innerText = "৳" + balance;
-
-    function viewAd() {
-      window.open("https://www.profitableratecpm.com/v6h7q998?key=9bf8c8c22777126bb9205f29b3e4e4d7", "_blank");
-      balance += 1;
-      localStorage.setItem("balance", balance);
-      document.getElementById("balance").innerText = "৳" + balance;
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("আপনার উইথড্র রিকুয়েস্ট পাঠানো হয়েছে!");
+      })
+      .catch(err => {
+        alert("উইথড্র রিকুয়েস্ট পাঠাতে সমস্যা হয়েছে।");
+        console.error(err);
+      });
     }
 
-    function autoAd() {
-      let confirmAuto = confirm("Auto Ad শুরু হবে। চালু রাখুন কিছুক্ষণ...");
-      if (confirmAuto) {
-        let count = 0;
-        let interval = setInterval(() =><!DOCTYPE html>
-<html lang="bn">
-<head>
-  <meta charset="UTF-8">
-  <title>অ্যাড দেখে টাকা ইনকাম</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f4f4f4;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      background: #fff;
-      border-radius: 15px;
-      max-width: 400px;
-      margin: auto;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-    h2 {
-      color: green;
-    }
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 8px;
-      background: #28a745;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #balance-box {
-      margin: 20px 0;
-      font-size: 18px;
-      color: #333;
-    }
-    input, select {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>অ্যাড দেখে টাকা ইনকাম</h2>
-
-    <div id="balance-box">আপনার ব্যালেন্স: <span id="balance">৳0</span></div>
-
-    <button class="btn" onclick="viewAd()">ভিউ অ্যাডস</button>
-    <button class="btn" onclick="autoAd()">অটোমেটিক্যালি অ্যাড</button>
-    <button class="btn" onclick="showWithdraw()">উইথড্র</button>
-    <button class="btn" onclick="showProfile()">প্রোফাইল</button>
-
-    <div id="withdraw-section" style="display:none;">
-      <input type="text" id="number" placeholder="বিকাশ/নগদ নাম্বার দিন" />
-      <select id="method">
-        <option value="bKash">bKash</option>
-        <option value="Nagad">Nagad</option>
-      </select>
-      <input type="number" id="amount" placeholder="উইথড্র এমাউন্ট (৳)" />
-      <button class="btn" onclick="withdrawRequest()">রিকোয়েস্ট পাঠান</button>
-    </div>
-
-    <p id="message" style="color:green;"></p>
-  </div>
-
-  <script>
-    let balance = localStorage.getItem("balance") ? parseInt(localStorage.getItem("balance")) : 0;
-    document.getElementById("balance").innerText = "৳" + balance;
-
-    function viewAd() {
-      window.open("https://www.profitableratecpm.com/v6h7q998?key=9bf8c8c22777126bb9205f29b3e4e4d7", "_blank");
-      balance += 1;
-      localStorage.setItem("balance", balance);
-      document.getElementById("balance").innerText = "৳" + balance;
+    function showProfile() {
+      alert("প্রোফাইল দেখানোর ফিচার তৈরি হচ্ছে...");
     }
 
-    function autoAd() {
-      let confirmAuto = confirm("Auto Ad শুরু হবে। চালু রাখুন কিছুক্ষণ...");
-      if (confirmAuto) {
-        let count = 0;
-        let interval = setInterval(() =>
+    function referFriend() {
+      alert("বন্ধুকে রেফার করে ৫ টাকা উপার্জন করুন!");
+    }
+  </script>
+</body>
+</html>
